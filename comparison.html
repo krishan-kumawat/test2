@@ -1,0 +1,112 @@
+<script>
+    /* Number Compersions */
+
+    /* String Compersions  */
+
+    // JavaScript uses the so-called “dictionary” or “lexicographical” order for String compersions
+
+    alert("A" > "a");  // false
+
+    alert("Gla" < "GlA"); // false 
+    /*
+        G compare with G  ----> go to next char    
+        l compare with l  ----> go to next char    
+        a compare with A (a < A )  ----> A is not greater to a (97 < 65)    
+
+    */
+    alert("Gla" > "GlA"); // true  // a > A (97 > 65)
+
+    /*  Comparison of different types   */
+
+    alert( '2' > 1 ); // true, string '2' becomes a number 2
+    alert( '01' == 1 ); // true, string '01' becomes a number 1
+
+    // For boolean values, true becomes 1 and false becomes 0.
+
+    alert( true == 1 ); // true
+    alert( false == 0 ); // true
+
+    /* Example */ 
+
+    let a = 0;
+    alert( Boolean(a) ); // false
+
+    let b = "0";
+    alert( Boolean(b) ); // true  // Boolean(b)---> true
+
+    alert(a == b); // true!
+
+
+
+    /*  Strict equality  */
+    // different types are converted to numbers by the equality operator == 
+    alert( 0 == false ); // true
+    alert( '' == false ); // true
+
+    alert( 0 === false ); // false, because the types are different
+
+    /* Comparison with null and undefined */
+
+    alert( null === undefined ); // false
+    alert( null == undefined ); // true  // There’s a special rule. These two are a “sweet couple”: they equal each other (in the sense of ==), but not any other value.
+
+
+    /*****      For maths and other comparisons < > <= >=       *****/
+
+   // null/undefined are converted to numbers: null becomes 0, while undefined becomes NaN.
+   alert(typeof undefined) // undefined
+   alert(typeof null) // object
+   alert(typeof NaN) // number
+
+
+   /*******     Strange result: null vs 0       ******/
+
+   // When comparing values of different types, JavaScript converts the values to numbers.
+    // operands of different types are converted to numbers by the equality operator ==
+    // The reason is that an equality check == and comparisons > < >= <= work differently.
+
+
+    alert( null > 0 );  // (1) false  // null -----> 0 
+    alert( null == 0 ); // (2) false   // null can't be covert into the 0 
+    alert( undefined == 0 ); // (2) false  // null can't be covert into the 0 
+    // because   On the other hand, the equality check == for undefined and null is defined such that, without any conversions, they equal each other and don’t equal anything else. 
+    alert( null >= 0 ); // (3) true  
+    alert(undefined > 0) // false
+    alert(undefined >= 0) // false
+
+
+
+    /******     An incomparable undefined       *******/
+
+
+    alert( undefined > 0 ); // false (1)
+    alert( undefined < 0 ); // false (2)
+    alert( undefined == 0 ); // false (3)
+
+    // Comparisons (1) and (2) return false because undefined gets converted to NaN and NaN is a special numeric value which returns false for all comparisons.
+
+    // The equality check (3) returns false because undefined only equals null, undefined, and no other value.
+
+
+    /******       Summary          ******/
+    
+    // Comparison operators return a boolean value.
+    // Strings are compared letter-by-letter in the “dictionary” order.
+    // When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+    // The values null and undefined equal == each other and do not equal any other value.
+    // Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+
+
+
+    /***** Example *****/
+    /*
+        5 > 4 → true
+        "apple" > "pineapple" → false
+        "2" > "12" → true
+        undefined == null → true
+        undefined === null → false
+        null == "\n0\n" → false
+        null === +"\n0\n" → false
+    */
+
+</script>

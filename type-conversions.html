@@ -1,0 +1,51 @@
+<script>
+
+    let isCheck = true;
+
+    alert(typeof isCheck);
+
+    alert(typeof String(isCheck));
+
+    /* for numbers */
+
+    alert("6"/"3");
+    let str = '123';
+    alert(typeof str);
+    alert(typeof Number(str));
+
+
+    let age = Number("an arbitrary string instead of a number");
+
+    alert(age); // NaN, conversion failed
+
+
+    alert(Number(undefined));
+    alert(Number(null)); // output will be 0
+    alert(typeof Number("   12     "));
+    alert(Number("   12     "));  // Whitespaces (includes spaces, tabs \t, newlines \n etc.) from the start and end are removed.
+    alert(Number("        "));  // output will be 0 
+    alert(Number("   12z     "));  // output will be NaN   
+
+    alert(Number(undefined));
+    
+    
+    /* Boolean Conversion */
+
+    // "", 0 , NaN, undefined = false
+    // other values become  = true
+
+    // output will be false
+    alert(Boolean(""));
+    alert(Boolean(NaN));
+    alert(Boolean(undefined));
+    alert(Boolean(0));
+    alert(Boolean(null))
+
+    // output will be true
+    alert(Boolean("a"));
+    alert(Boolean("NaN"));
+    alert(Boolean(1));
+    alert(Boolean("0"));
+    alert(Boolean(" "));
+
+</script>
